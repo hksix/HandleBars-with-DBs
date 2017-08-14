@@ -1,14 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.render('facilities', { 
-    name: 'Tennis Court',
-    reviews: 'Play some tennis today', 
-    location: 'THE THUNDER DOME!'
+const db = require('../db');
+
+
+router.get('/:id', function(req, res, next) {
+  
+    db.one(`
+      select * from cd.facilities where facid=${req.params.id};
+    `).then((results)=>{
+      res.render('facilities',{
+        facility: results
+      });
+    })
   });
-  // res.send('respond with a resource');
-});
+
+
 
 module.exports = router;
