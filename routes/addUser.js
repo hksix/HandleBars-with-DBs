@@ -9,11 +9,12 @@ router.get('/', function(req, res, next) {
     select * from cd.members;
   `)
     .then((result)=>{
-      res.render('users', {
+      // console.log(result);
+      res.render('addUser', {
         members:result
-        
       });
     });
+
 });
 
 module.exports = router;

@@ -1,7 +1,17 @@
-<h1>{{facility.name}}</h1>
-<p>initialoutlay: {{facility.initialoutlay}}</p>
 
-
-<p>Member Cost is ${{facility.membercost}}</p>
-<p>Guest Cost is ${{facility.guestcost}}</p>
-
+<div>
+            {{#each facility}}
+            <ul>
+            <strong><p>ID: {{facid}} </br> Name: {{name}}</p></strong>
+                <div class='dropdown'>
+                    <button class='dropbtn'>Facility info</button>
+                    <div id="memberDropdown" class='dropdown-content'>
+                        <li><p>Member Cost: ${{membercost}}</p></li>
+                        <li><p>Guest Cost: ${{guestcost}}</p></li>
+                        <li><p> Monthly Maintenance Cost: ${{monthlymaintenance}}</p></li>
+                        
+                    </div>
+                </div>
+            </ul>
+            {{/each}}
+        </div>

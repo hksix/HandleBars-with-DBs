@@ -1,4 +1,40 @@
-<h1>{{user}}</h1>
-<p>Welcome to the {{title}}</p>
+<div class="userpg">
+    <h1 class='title'>{{Title}}</h1>
+    <div>
+        <h2>Members Page: </h2>
+        <form>
+            First name:<br>
+            <input type="text" name="firstname"><br>
+            Last name:<br>
+            <input type="text" name="lastname"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <div>
+        <button onclick="showAll" value="Show All Users" class="memberslist">Show All members</button>
 
-<p>{{user}} {{message}}</p>
+    </div>
+    <div>
+        <input type="submit" value="Add User">
+    </div>
+
+        <div class="memberslist">
+            {{#each members}}
+            <ul>
+            <strong><p>Surname: {{surname}} , First Name: {{firstname}}</p></strong>
+                <div class='dropdown'>
+                    <button class='dropbtn'>MemberInfo</button>
+                    <div id="memberDropdown" class='dropdown-content'>
+                        <li><p>MemberID: {{memid}}</p></li>
+                        <li><p>Address: {{address}}</p></li>
+                        <li><p> Zip-Code: {{zipcode}}</p></li>
+                        <li><p> Telephone: {{telephone}}</p></li>
+                        <li><p> Join Date: {{joindate}}</p></li>
+                    </div>
+                </div>
+            </ul>
+            {{/each}}
+        </div>
+        
+</div>
