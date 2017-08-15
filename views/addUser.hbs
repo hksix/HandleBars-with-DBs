@@ -1,15 +1,21 @@
+
 <div class='addUsers'>
-    <form action="/users/new" method="post">
+    {{#with member}}
+    <form method="post">
         First name:
-            <input type="text" name="firstname"><br>
+            <input type="text" name="firstname"value={{firstname}}><br>
         Last name:
-            <input type="text" name="surname"><br>
+            <input type="text" name="surname" value={{surname}}><br>
         Address:
-            <input type="text" name="address"><br>
+            <input type="text" name="address" value={{address}}><br>
         Zipcode:
-            <input type="text" name="zipcode"><br>
+            <input type="text" name="zipcode" value={{zipcode}}><br>
         Telephone:
-            <input type="number" name="address"><br>
+            <input type="text" name="telephone" value={{telephone}}><br>
         <input type="submit" value="Submit">
     </form>
+    {{/with}}
 </div>
+
+
+
