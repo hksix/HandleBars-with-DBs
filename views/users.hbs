@@ -1,7 +1,7 @@
 <div class="userpg">
     <h1 class='title'>{{Title}}</h1>
     <div>
-        <h2>Members Page: </h2>
+        <h1>Members Page </h1>
         <form>
             First name:<br>
             <input type="text" name="firstname"><br>
@@ -25,7 +25,7 @@
             <ul>
             <strong><p>Surname: {{surname}} , First Name: {{firstname}}</p></strong>
                 <div class='dropdown'>
-                    <button class='dropbtn'>MemberInfo</button>
+                    <button class='dropbtn'>Member Info</button>
                     <div id="memberDropdown" class='dropdown-content'>
                         <li><p>MemberID: {{memid}}</p></li>
                         <li><p>Address: {{address}}</p></li>
@@ -34,6 +34,7 @@
                         <li><p> Join Date: {{joindate}}</p></li>
                     </div>
                 </div>
+                <button class="edit"><a href="/users/{{{memid}}}/edit">edit</a></button>
             </ul>
             {{/each}}
         </div>

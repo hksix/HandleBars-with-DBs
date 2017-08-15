@@ -30,7 +30,7 @@ router.get('/:id/edit', function(req, res, next){
   db.one(`
     select * from cd.members where memid=${req.params.id};
   `).then ((result) =>{
-      res.render('addUser',{
+      res.render('editUser',{
       member:result
       });
   });
@@ -50,7 +50,7 @@ router.post('/:id/edit', function(req, res, next) {
       where memid=${req.params.id};
   `).then((result) => {
       console.log(result);
-      res.render('addUser', {
+      res.render('editUser', {
         member: result
       });
   })
