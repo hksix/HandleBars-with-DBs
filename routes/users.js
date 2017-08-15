@@ -14,6 +14,17 @@ router.get('/', function(req, res, next) {
         
       });
     });
+  });
+
+router.get('/:id', function(req, res,next) {
+  db.one(`
+  select * from cd.members where memid=${req.params.id};
+  `).then((result)=>{
+    console.log(result);
+    res.render('users',{
+      members:[result]
+    });
+  });
 });
 
 module.exports = router;
